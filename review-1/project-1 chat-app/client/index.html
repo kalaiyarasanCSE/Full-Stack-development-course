@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Login</h2>
+
+<input id="email"><br>
+<input id="password" type="password"><br>
+<button onclick="login()">Login</button>
+<p>
+    Don't have account?
+    <a href="register.html">Register</a>
+</p>
+<script>
+function login(){
+fetch("../php/login.php",{
+method:"POST",
+body:new URLSearchParams({
+email:email.value,
+password:password.value
+})
+})
+.then(res=>res.text())
+.then(data => {
+    if (data !== "Invalid" && data.trim() !== "") {
+        localStorage.setItem("user", data.trim());
+        window.location = "chat.html";
+    } else {
+        alert("Login failed");
+    }
+});
+}
+</script>
+
+</body>
+</html>

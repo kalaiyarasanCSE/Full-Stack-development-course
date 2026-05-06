@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+
+<!-- Emoji -->
+<script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+<div class="row vh-100">
+
+<div class="col-4 bg-light border-end">
+<h4 class="p-3">Users</h4>
+<ul id="userList" class="list-group"></ul>
+</div>
+
+<div class="col-8 d-flex flex-column">
+
+<div class="bg-success text-white p-3">
+<h5 id="chatUser">Select User</h5>
+</div>
+
+<div id="chatBox" class="flex-grow-1 p-3"></div>
+
+<small id="typing" class="px-3"></small>
+
+<div class="p-3 d-flex">
+
+<button class="btn btn-light" onclick="toggleEmoji()">😀</button>
+
+<input id="message" class="form-control mx-2">
+
+<button class="btn btn-success" onclick="sendMessage()">Send</button>
+
+</div>
+
+<div id="emojiPicker"></div>
+
+</div>
+</div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

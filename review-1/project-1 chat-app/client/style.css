@@ -1,0 +1,23 @@
+body { background:#ece5dd; }
+
+#chatBox {
+overflow-y:auto;
+display:flex;
+flex-direction:column;
+}
+
+.message {
+padding:10px;
+margin:5px;
+max-width:60%;
+border-radius:10px;
+}
+
+.sent { background:#dcf8c6; align-self:flex-end; }
+.received { background:white; align-self:flex-start; }
+
+#emojiPicker {
+position:absolute;
+bottom:80px;
+z-index:1000;
+}
